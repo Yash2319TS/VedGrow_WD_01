@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yash · Portfolio</title>
+    <meta
+      name="description"
+      content="Yash — VLSI &amp; digital logic student, web developer. Portfolio of projects, skills, and contact."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== Signal trace / progress line (decorative, aria-hidden) ===== -->
+    <div class="trace-rail" aria-hidden="true">
+      <svg
+        class="trace-rail__line"
+        viewBox="0 0 2 100"
+        preserveAspectRatio="none"
+      >
+        <line x1="1" y1="0" x2="1" y2="100" />
+      </svg>
+      <div class="trace-rail__fill" id="traceFill"></div>
+      <ul class="trace-rail__nodes">
+        <li data-node="hero">
+          <span class="trace-rail__dot"></span
+          ><span class="trace-rail__label">HERO</span>
+        </li>
+        <li data-node="about">
+          <span class="trace-rail__dot"></span
+          ><span class="trace-rail__label">ABOUT</span>
+        </li>
+        <li data-node="skills">
+          <span class="trace-rail__dot"></span
+          ><span class="trace-rail__label">SKILLS</span>
+        </li>
+        <li data-node="projects">
+          <span class="trace-rail__dot"></span
+          ><span class="trace-rail__label">PROJECTS</span>
+        </li>
+        <li data-node="contact">
+          <span class="trace-rail__dot"></span
+          ><span class="trace-rail__label">CONTACT</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ===== Top bar (mobile nav + brand) ===== -->
+    <header class="topbar">
+      <a href="#hero" class="topbar__brand" data-nav-link>
+        <span class="topbar__brand-tag">&lt;</span>Yash<span
+          class="topbar__brand-tag"
+          >/&gt;</span
+        >
+      </a>
+      <button
+        class="topbar__toggle"
+        id="navToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" data-open="false">
+      <a href="#hero" data-nav-link>01 · Hero</a>
+      <a href="#about" data-nav-link>02 · About</a>
+      <a href="#skills" data-nav-link>03 · Skills</a>
+      <a href="#projects" data-nav-link>04 · Projects</a>
+      <a href="#contact" data-nav-link>05 · Contact</a>
+    </nav>
+
+    <main>
+      <!-- ===== HERO ===== -->
+      <section id="hero" class="section hero">
+        <div class="hero__inner">
+          <p class="eyebrow">SIGNAL LOCKED · PORTFOLIO v1.0</p>
+          <h1 class="hero__title">
+            Hi, I'm <span class="accent-copper">Yash</span>.<br />
+            I am a web developer<br class="hero__break" />
+            and build for the web.
+          </h1>
+          <p class="hero__sub">
+            A full-stack web developer who turns ideas into fast, responsive,
+            and user-friendly web applications.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--solid" data-nav-link
+              >View Projects</a
+            >
+            <a href="#contact" class="btn btn--ghost" data-nav-link
+              >Get in Touch</a
+            >
+          </div>
+        </div>
+
+        <div class="hero__scope" aria-hidden="true">
+          <svg
+            viewBox="0 0 600 160"
+            class="clock-wave"
+            preserveAspectRatio="none"
+          >
+            <path
+              id="clockPath"
+              d="M0,120 L60,120 L60,40 L140,40 L140,120 L220,120 L220,40 L300,40 L300,120 L380,120 L380,40 L460,40 L460,120 L540,120 L540,40 L600,40"
+            />
+          </svg>
+          <span class="hero__scope-label"
+            >CLK — sequential timing reference</span
+          >
+        </div>
+
+        <a
+          href="#about"
+          class="scroll-cue"
+          data-nav-link
+          aria-label="Scroll to About section"
+        >
+          <span>SCROLL</span>
+          <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+            <path
+              d="M7 1V19M7 19L1 13M7 19L13 13"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+          </svg>
+        </a>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section id="about" class="section about">
+        <div class="section-head">
+          <span class="section-index">02</span>
+          <h2 class="section-title">About</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__die" aria-hidden="true">
+            <div class="die">
+              <img
+                class="Logo"
+                src="./icons8-code-48.png"
+                alt="Stylized code icon with angled brackets and slash representing programming and development"
+              />
+            </div>
+          </div>
+
+          <div class="about__copy">
+            <p>
+              I spend my time building modern web applications that are fast,
+              responsive, and easy to use.I work with HTML, CSS, JavaScript,
+              Node.js, Express, EJS, and Git, focusing on writing efficient code
+              and delivering smooth user experiences. Whether I'm building
+              responsive interfaces, designing server-side logic, or connecting
+              data with dynamic web pages, I enjoy turning ideas into
+              functional, scalable applications—one feature at a time.
+            </p>
+            <p>
+              Outside the datasheet, I build with the same instinct for
+              structure: Node.js and Express on the backend, clean
+              server-rendered views with EJS, and an eye for interfaces that
+              respond the moment you touch them. I like systems where every
+              signal has somewhere defined to go — whether that's a clock edge
+              or an HTTP request.
+            </p>
+            <ul class="about__facts">
+              <li>
+                <span class="about__facts-k">Focus</span
+                ><span class="about__facts-v">Front End development</span>
+              </li>
+              <li>
+                <span class="about__facts-k"> Interests</span
+                ><span class="about__facts-v">Backend development </span>
+              </li>
+              <li>
+                <span class="about__facts-k">Currently</span
+                ><span class="about__facts-v"
+                  >Open to internships &amp; collaborations</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SKILLS ===== -->
+      <section id="skills" class="section skills">
+        <div class="section-head">
+          <span class="section-index">03</span>
+          <h2 class="section-title">Skills</h2>
+        </div>
+
+        <div class="skills__grid">
+          <article class="chip">
+            <header class="chip__head">
+              <span class="chip__notch" aria-hidden="true"></span>
+              <h3>Frontend</h3>
+            </header>
+            <ul class="chip__pins">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Responsive Design</li>
+              <li>Document Object Model</li>
+            </ul>
+          </article>
+
+          <article class="chip">
+            <header class="chip__head">
+              <span class="chip__notch" aria-hidden="true"></span>
+              <h3>Backend</h3>
+            </header>
+            <ul class="chip__pins">
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>EJS Templating</li>
+              <li>REST APIs</li>
+            </ul>
+          </article>
+
+          <article class="chip">
+            <header class="chip__head">
+              <span class="chip__notch" aria-hidden="true"></span>
+              <h3>Tools</h3>
+            </header>
+            <ul class="chip__pins">
+              <li>Git &amp; GitHub</li>
+              <li>VS Code</li>
+              <li>NPM</li>
+              <li>Unix Command Line</li>
+            </ul>
+          </article>
+
+          <article class="chip">
+            <header class="chip__head">
+              <span class="chip__notch" aria-hidden="true"></span>
+              <h3>Business Development</h3>
+            </header>
+            <ul class="chip__pins">
+              <li>Client Relationship Management</li>
+              <li>Communication Skills</li>
+              <li>Team Collaboration</li>
+              <li>Time Management</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== PROJECTS ===== -->
+      <section id="projects" class="section projects">
+        <div class="section-head">
+          <span class="section-index">04</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+
+        <div class="projects__grid">
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__tag">01</span>
+              <h3>Travelly | Website For Travellers.</h3>
+            </div>
+            <p>
+              Developed a travelling webiste that provides various travelling
+              packages across the world. Focused on understanding of HTML CSS
+              and Javascript along with Bootstrap
+            </p>
+            <ul class="project-card__stack">
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+            <!--Live <div class="project-card__links">
+              <a href="#" target="_blank" rel="noopener">Live demo →</a>
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div> -->
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__tag">02</span>
+              <h3>Simon Game</h3>
+            </div>
+            <p>
+              Developed an interactive memory game using HTML, CSS, and
+              JavaScript. Implemented dynamic color sequences, user input
+              validation, score tracking, and game logic using JavaScript event
+              handling and DOM manipulation to create a responsive and engaging
+              user experience
+            </p>
+            <ul class="project-card__stack">
+              <li>JavaScript</li>
+              <li>CSS3</li>
+              <li>HTML</li>
+            </ul>
+            <!--live <div class="project-card__links">
+              <a href="#" target="_blank" rel="noopener">Live demo →</a>
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div> -->
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__tag">03</span>
+              <h3>Javascript quiz application</h3>
+            </div>
+            <p>
+              Developed a quiz application that asks various javascript
+              questions. Focused on understanding of HTML CSS and Javascript
+            </p>
+            <ul class="project-card__stack">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JAVASCRIPT</li>
+            </ul>
+            <!--live <div class="project-card__links">
+              <a href="#" target="_blank" rel="noopener">Live demo →</a>
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div> -->
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section id="contact" class="section contact">
+        <div class="section-head">
+          <span class="section-index">05</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__intro">
+            <p>
+              Have a role, a project, or just want to talk circuits and code?
+              The form below goes straight to my inbox.
+            </p>
+            <ul class="contact__links">
+              <li>
+                <a href="mailto:yy6915372@gmail.com">yy6915372@gmail.com</a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/yash2319TS"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/yas2319TS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/yash-yadav-8109141b2"
+                  target="_blank"
+                  rel="noopener"
+                  >linkedin.com/in/Yash Yadav
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!--Form-->
+          <form
+            id="contactForm"
+            class="contact__form"
+            action="https://formspree.io/f/mpqggyeb"
+            method="POST"
+          >
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="What's on your mind?"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn--solid btn--block"
+              id="submitBtn"
+            >
+              Send Message
+            </button>
+
+            <p
+              class="form-status"
+              id="formStatus"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        © <span id="year"></span> Yash. Built with HTML, CSS &amp; JavaScript.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
